@@ -7,6 +7,7 @@
         "path": "new-people-csv",
         "responseMode": "lastNode",
         "options": {
+          "binaryData": true,
           "binaryPropertyName": "data"
         }
       },
@@ -20,7 +21,9 @@
     {
       "parameters": {
         "operation": "csv",
-        "options": {}
+        "options": {
+          "binaryPropertyName": "data0"
+        }
       },
       "id": "a1b2c3d4-1111-4000-8000-000000000002",
       "name": "parse upload",
@@ -82,7 +85,9 @@
     {
       "parameters": {
         "operation": "csv",
-        "options": {}
+        "options": {
+          "binaryPropertyName": "data"
+        }
       },
       "id": "a1b2c3d4-1111-4000-8000-000000000005",
       "name": "parse known",

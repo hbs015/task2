@@ -22,6 +22,10 @@ If fetch known people 404s, the csv is not on github yet — put the file on a p
 
 ## stuck
 
-wanted to query sqlite from n8n directly. no built-in node, and a python webhook would be counted as code. exported emails/phones to csv and let n8n compareDatasets do the check.
+Root cause of execution 6: the csv webhook had a binary property name configured, but binary data capture was off. n8n discarded the upload entirely, so parse upload failed with "item has no binary field 'data'".
+
+What changed: enabled binaryData on the csv webhook, pointed parse upload at data0 for multipart uploads, and made both parse nodes explicit csv operations.
+
+Wanted to query sqlite from n8n directly. no built-in node, and a python webhook would be counted as code. exported emails/phones to csv and let n8n compareDatasets do the check.
 
 compareDatasets only joins one field at a time so emails and phones are two branches merged. a bit annoying but it flags both.
